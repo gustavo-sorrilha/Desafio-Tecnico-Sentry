@@ -35,10 +35,12 @@ Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot
 5. **A aplicação estará rodando em ```http://localhost:8080```**
 
 **Acessando a Documentação Swagger**
+
 Acesse a documentação da API via Swagger:
 
 URL: ```http://localhost:8080/swagger-ui.html```
 A interface Swagger permitirá que você visualize todos os endpoints da API e até mesmo faça requisições diretamente pela interface.
 
 **Logs**
+
 Os logs da aplicação estão configurados com Log4j2. Eles são registrados em tempo real e podem ser visualizados no console. O Log4j2 está configurado para registrar informações sobre a execução da aplicação, erros e outros eventos importantes.
