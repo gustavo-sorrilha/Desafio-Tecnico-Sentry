@@ -22,7 +22,7 @@ Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot
 
 1. **Clone o repositório**:
    ```
-   git clone https://github.com/seuusuario/seurepositorio.git
+   git clone https://github.com/gustavo-sorrilha/Desafio-Tecnico-Sentry.git
 2. **Acesse o diretório do projeto**:
    ```
    cd desafio
