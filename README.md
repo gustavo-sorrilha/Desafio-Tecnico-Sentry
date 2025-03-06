@@ -1,6 +1,6 @@
 # Desafio Técnico - Gerenciamento de Documentos
 
-Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot**, **Maven** e **Swagger**. O sistema oferece uma API RESTful para realizar operações de CRUD (Criar, Ler, Atualizar, Apagar) em documentos, incluindo o upload de arquivos binários.
+Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot**, **Maven** e **Swagger**. O sistema oferece uma API RESTful para realizar operações de CRUD (Criar, Ler, Atualizar, Apagar) em documentos.
 
 ## Tecnologias Utilizadas
 
