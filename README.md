@@ -1,307 +1,45 @@
-# Documentação das Classes
-
-## Classe `Usuario`
-
-Representa um usuário do sistema.
-
-**Atributos:**
-- `nome` (String): Nome do usuário.
-- `email` (String): Endereço de e-mail do usuário.
-- `senha` (String): Senha do usuário.
-
-## Classe `Time`
-
-Representa um time de jogadores.
-
-**Atributos:**
-- `vitorias` (int): Número de vitórias do time.
-- `derrotas` (int): Número de derrotas do time.
-- `imagem` (String): URL da imagem do time.
-- `nome` (String): Nome do time.
-
-## Classe `Partida`
-
-Representa uma partida entre times.
-
-**Atributos:**
-- `times` (array de Time): Times participantes da partida.
-- `data_partida` (LocalDateTime): Data e hora da partida.
-- `nome_campeonato` (Campeonato): Campeonato ao qual a partida pertence.
-
-## Classe `Campeonato`
-
-Representa um campeonato com várias partidas.
-
-**Atributos:**
-- `nome_campeonato` (String): Nome do campeonato.
-- `proximas_partidas` (array de Partida): Próximas partidas no campeonato.
-
----
-
-### Exemplos de Requisições HTTP
-
-Aqui estão exemplos de como interagir com a API usando os métodos HTTP (GET, POST, PUT, DELETE):
-
----
-## Endpoint **Campeonato**
-
-
-#### `GET /campeonatos`
-
-Lista todos os campeonatos.
-
-**Exemplo de retorno:**
-```json
-[
-    {
-        "nome_campeonato": "CBLOL",
-        "proximas_partidas": [
-            {
-                "times": [
-                    { 
-                        "vitorias": 12,
-                        "derrotas": 6,
-                        "imagem":  "https://img.png.com",
-                        "nome": "Loud"
-                    },
-                    { 
-                        "vitorias": 14,
-                        "derrotas": 4,
-                        "imagem":  "https://img.png.com",
-                        "nome": "Pain"
-                    }
-                ],
-                "data_partida": "Mon Aug 21 2023 21:21:56"
-            }
-        ]
-    }
-]
-```
-
-
-#### `POST /campeonato`
-
-Cadastra um campeonato.
-
-**Exemplo do body da requisição:**
-```json
-{
-  "nome_campeonato": "LCK",
-  "proximas_partidas": []
-}
-```
-
-#### `UPDATE /campeonato/{id}`
-
-Atualiza um campeonato.
-
-**Exemplo do body da requisição:**
-```json
-{
-  "nome_campeonato": "LCK",
-  "proximas_partidas": [1, 2]
-}
-
-```
-
-#### `DELETE /campeonato/{id}`
-
-Deleta um campeonato.
-
----
-
----
-## Endpoint **Time**
-
-
-#### `GET /times`
-
-Lista todos os times.
-
-**Exemplo de retorno:**
-```json
-[
-    {
-        "vitorias": 12,
-        "derrotas": 6,
-        "imagem": "https://img.png.com",
-        "nome": "Loud"
-    },
-    {
-        "vitorias": 14,
-        "derrotas": 4,
-        "imagem": "https://img.png.com",
-        "nome": "Pain"
-    }
-]
-```
-
-
-#### `POST /time`
-
-Cadastra um time.
-
-**Exemplo do body da requisição:**
-```json
-{
-  "vitorias": 4,
-  "derrotas": 5,
-  "imagem": "https://img.png.com",
-  "nome": "Pain"
-}
-```
-
-#### `UPDATE /time/{id}`
-
-Atualiza um time.
-
-**Exemplo do body da requisição:**
-```json
-{
-	"vitorias": 6,
-	"derrotas": 5,
-	"imagem": "https://img.png.com",
-	"nome": "PAIN"
-}
-```
-
-#### `DELETE /time/{id}`
-
-Deleta um time.
-
----
-
----
-## Endpoint **Partida**
-
-
-#### `GET /partidas`
-
-Lista todas as partidas.
-
-**Exemplo de retorno:**
-```json
-[
-    {
-        "times": [
-            { 
-                "vitorias": 12,
-                "derrotas": 6,
-                "imagem":  "https://img.png.com",
-                "nome": "Loud"
-            },
-            { 
-                "vitorias": 14,
-                "derrotas": 4,
-                "imagem":  "https://img.png.com",
-                "nome": "Pain"
-            }
-        ],
-    "data_partida": "Mon Aug 21 2023 21:21:56",
-    "nome_campeonato": "CBLOL"
-        
-    }
-]
-```
-
-
-#### `POST /Partida`
-
-Cadastra uma partida.
-
-**Exemplo do body da requisição:**
-```json
-{
-  "times": [2, 3],
-  "id_campeonato": 1,
-  "data_partida": "2023-09-30T14:30:00"
-}
-
-```
-
-#### `UPDATE /partida/{id}`
-
-Atualiza uma partida.
-
-**Exemplo do body da requisição:**
-```json
-{
-  "times": [1, 8],
-  "id_campeonato": 1,
-  "data_partida": "2023-09-20T12:00:00"
-}
-```
-
-#### `DELETE /partida/{id}`
-
-Deleta uma partida.
-
----
-
-## Endpoint **Usuario**
-
-
-#### `GET /usuarios`
-
-Lista todos os usuários.
-
-**Exemplo de retorno:**
-```json
-[
-    {
-        "nome": "João",
-        "email": "joao@example.com",
-        "senha": "********"
-    },
-    {
-        "nome": "Maria",
-        "email": "maria@example.com",
-        "senha": "******"
-    }
-]
-```
-
-
-#### `POST /usuario`
-
-Cadastra um novo usuário.
-
-**Exemplo do body da requisição:**
-```json
-{ 
-    "nome": "Pedro",
-    "email": "pedro@example.com",
-    "senha": "********"
-}
-```
-
-#### `UPDATE /usuario/{id}`
-
-Atualiza um usuário.
-
-**Exemplo do body da requisição:**
-```json
-{ 
-    "nome": "Pedro",
-    "email": "pedro2@example.com",
-    "senha": "********"
-}
-```
-
-#### `DELETE /usuario/{id}`
-
-Deleta um usuário.
-
----
-
-## Possíveis status code das requisições
-
-| Código | Descrição
-|-|-
-| 200 | Requisição bem-sucedida
-| 201 | Cadastrado com sucesso
-| 204 | A requisição foi bem-sucedida, mas não há conteúdo para retornar.
-| 400 | Os campos enviados são inválidos
-| 404 | Página não encontrada
-| 405 | Método não permitido
-| 500 | Erro interno do servidor
+# Desafio Técnico - Gerenciamento de Documentos
+
+Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot**, **Maven** e **Swagger**. O sistema oferece uma API RESTful para realizar operações de CRUD (Criar, Ler, Atualizar, Apagar) em documentos, incluindo o upload de arquivos binários. A aplicação utiliza **Log4j2** para logar eventos importantes e **Spring Security** para limitar o acesso à API através de uma **API Key**.
+
+## Tecnologias Utilizadas
+
+- **Spring Boot**: Framework principal para criação da aplicação.
+- **Spring Data JPA**: Para persistência de dados utilizando banco de dados relacional.
+- **Swagger**: Para documentação e teste da API.
+- **Log4j2**: Para gerenciamento de logs.
+- **Spring Security**: Para proteção da API com autenticação via API Key.
+- **Maven**: Gerenciador de dependências e build.
+
+## Como Rodar a Aplicação
+
+### Pré-requisitos
+
+- **Java 21** ou superior instalado.
+- **Maven** instalado para gerenciar dependências.
+- **IDE** recomendada: IntelliJ IDEA ou Eclipse.
+
+### Passos para rodar a aplicação
+
+1. **Clone o repositório**:
+   ```
+   git clone https://github.com/seuusuario/seurepositorio.git
+2. **Acesse o diretório do projeto**:
+   ```
+   cd desafio
+3. **Baixe as dependências do Maven**:
+   ```
+   mvn clean install
+4. **Rode a aplicação**:
+   ```
+   mvn spring-boot:run
+5. **A aplicação estará rodando em ```http://localhost:8080```**
+
+**Acessando a Documentação Swagger**
+Acesse a documentação da API via Swagger:
+
+URL: ```http://localhost:8080/swagger-ui.html```
+A interface Swagger permitirá que você visualize todos os endpoints da API e até mesmo faça requisições diretamente pela interface.
+
+**Logs**
+Os logs da aplicação estão configurados com Log4j2. Eles são registrados em tempo real e podem ser visualizados no console. O Log4j2 está configurado para registrar informações sobre a execução da aplicação, erros e outros eventos importantes.
