@@ -1,6 +1,6 @@
 # Desafio Técnico - Gerenciamento de Documentos
 
-Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot**, **Maven** e **Swagger**. O sistema oferece uma API RESTful para realizar operações de CRUD (Criar, Ler, Atualizar, Apagar) em documentos, incluindo o upload de arquivos binários. A aplicação utiliza **Log4j2** para logar eventos importantes e **Spring Security** para limitar o acesso à API através de uma **API Key**.
+Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot**, **Maven** e **Swagger**. O sistema oferece uma API RESTful para realizar operações de CRUD (Criar, Ler, Atualizar, Apagar) em documentos, incluindo o upload de arquivos binários.
 
 ## Tecnologias Utilizadas
 
@@ -8,7 +8,6 @@ Este é um sistema de gerenciamento de documentos desenvolvido com **Spring Boot
 - **Spring Data JPA**: Para persistência de dados utilizando banco de dados relacional.
 - **Swagger**: Para documentação e teste da API.
 - **Log4j2**: Para gerenciamento de logs.
-- **Spring Security**: Para proteção da API com autenticação via API Key.
 - **Maven**: Gerenciador de dependências e build.
 
 ## Como Rodar a Aplicação
